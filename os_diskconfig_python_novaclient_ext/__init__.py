@@ -21,7 +21,7 @@ from novaclient import utils
 from novaclient.v1_1 import servers
 from novaclient.v1_1 import shell
 
-API_DISK_CONFIG = "RAX-DCF:diskConfig"
+API_DISK_CONFIG = "OS-DCF:diskConfig"
 
 
 def add_args():
