@@ -9,7 +9,8 @@ Disk Config extension for python-novaclient.
 Install
 =======
 
-pip install os_diskconfig_python_novaclient_ext
+::
+  pip install os_diskconfig_python_novaclient_ext
 
 
 Usage
