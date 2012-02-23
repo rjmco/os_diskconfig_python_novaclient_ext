@@ -25,21 +25,20 @@ API_DISK_CONFIG = "OS-DCF:diskConfig"
 
 
 def add_args():
-    for func in (shell.do_boot, shell.do_zone_boot):
-        utils.add_arg(func,
-            '--disk-config',
-            default=None,
-            metavar='<auto|manual>',
-            help="Whether to expand primary partition to fill disk."
-                 " This overrides the value inherited from image.")
+    utils.add_arg(shell.do_boot,
+        '--disk-config',
+        default=None,
+        metavar='<auto|manual>',
+        help="Whether to expand primary partition to fill disk."
+             " This overrides the value inherited from image.")
 
 
 def bind_args_to_resource_manager(args):
     def add_disk_config(args):
         return dict(disk_config=args.disk_config)
 
-    for func in (shell.do_boot, shell.do_zone_boot):
-        utils.add_resource_manager_extra_kwargs_hook(func, add_disk_config)
+    utils.add_resource_manager_extra_kwargs_hook(
+            shell.do_boot, add_disk_config)
 
 
 def add_modify_body_hook():
