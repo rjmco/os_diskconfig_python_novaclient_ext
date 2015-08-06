@@ -18,8 +18,13 @@ Disk Config extension
 """
 
 from novaclient import utils
-from novaclient.v1_1 import servers
-from novaclient.v1_1 import shell
+
+try:
+    from novaclient.v2 import servers
+    from novaclient.v2 import shell
+except ImportError:
+    from novaclient.v1_1 import servers
+    from novaclient.v1_1 import shell
 
 API_DISK_CONFIG = "OS-DCF:diskConfig"
 
