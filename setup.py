@@ -17,7 +17,7 @@ import setuptools
 
 setuptools.setup(
     name="os_diskconfig_python_novaclient_ext",
-    version="0.1.2",
+    version="0.1.3",
     author="Rackspace",
     author_email="rick.harris@rackspace.com",
     description="Disk Config extension for python-novaclient",
